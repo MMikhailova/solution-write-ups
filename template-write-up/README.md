@@ -1,37 +1,79 @@
-# [challengeName](link-to-challenge)
+# [addUp](https://edabit.com/challenge/4gzDuDkompAqujpRi)
 
 <!--
-  describe the function's behavior in your own words.
-  explain why someone might want to use this function
+  This function adds up all numbers from 1 to the given number.
+  It takes a number as an argument.
+
+  This function represents summation notation and can be used to perform statistical analysis of biological data. 
 -->
 
 ## Syntax
 
-> functionName(`type`, `type`, ...) -> `type`
+> addUp(`number`) -> `number`
 
 ### Parameters
 
-**paramName**: `paramType`
+**num**: `number`
 
 <!--
-  describe the parameter
+  Any natural numbers
 -->
 
-### Return Value: `type`
+### Return Value: `number`
 
 <!--
-  describe the return value
+  Any natural numbers
 -->
 
 ## Test Cases
-
+<!--Test.assertEquals(addUp(4), 10)
+Test.assertEquals(addUp(13), 91)
+Test.assertEquals(addUp(600), 180300)
+Test.assertEquals(addUp(392), 77028)
+Test.assertEquals(addUp(53), 1431)
+Test.assertEquals(addUp(897), 402753)
+Test.assertEquals(addUp(23), 276)
+Test.assertEquals(addUp(1000), 500500)
+Test.assertEquals(addUp(738), 272691)
+Test.assertEquals(addUp(100), 5050)
+Test.assertEquals(addUp(925), 428275)
+Test.assertEquals(addUp(1), 1)
+Test.assertEquals(addUp(999), 499500)
+Test.assertEquals(addUp(175), 15400)
+Test.assertEquals(addUp(111), 6216)
 <!--
   copy in the test cases from the original challenge
-
-  if you write your own test cases in a sandbox file, include those too
 -->
-
+```js for (const solution of [addUp]) {
+  describe(`${solution.name}:adds up all numbers until a given number`, () => {
+    describe('the natural numbers', () => {
+      it('3 should return 6', () => {
+        expect(solution(3)).toEqual(6);
+      });
+      it('1000 should return  500500)', () => {
+        expect(solution(1000)).toEqual(500500);
+      });
+      describe('negative numbers', () => {
+        it('-3 should throw error ', () => {
+          expect(() => solution(-3)).toThrowError();
+        });
+      });
+    });
+  });
+}
+```
 ## Use Cases
+
+```js
+const number = 3;
+const sumUp = addUp(number);
+console.log(sumUp); // 6
+```
+```js
+const number = -1;
+const sumUp = addUp(number);
+console.log(sumUp); // error
+```
 
 <!--
   write a minimum of 2 use cases to show this functions behavior.
@@ -46,6 +88,8 @@
 ---
 
 ## Retrospective
+I would like to test more cases.
+Be careful with brackets.
 
 <!--
   write any notes to help you review this exercise later, and to help others' study it.
@@ -62,7 +106,7 @@
 -->
 
 ### Continue Doing
-
+Testing more cases
 ### Start Doing
 
 ### Stop Doing
