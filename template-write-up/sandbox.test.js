@@ -1,9 +1,10 @@
 'use strict';
 
-/*
-Adds up all numbers from 1 to the given number
-@param {number} number
-@return {sum} number
+/**
+Adds up all numbers from 1 to the given number.
+
+@param {number} [num]
+@return {number} The sum of numbers.
 */
 const addUp = (num) => {
   if (num < 0) {
