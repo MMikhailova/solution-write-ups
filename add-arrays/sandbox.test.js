@@ -26,6 +26,7 @@ const reduce = (arr1, arr2) => {
     return newArray;
   }, []);
 };
+
 for (const solution of [reduce, map1, map2]) {
   describe(`${solution.name}:should combine two given arrays of equal length in a new one, throw an error if its lengths are not equal`, () => {
     describe('arrays of the same length with either numbers or strings', () => {

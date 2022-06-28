@@ -1,3 +1,4 @@
+Here I have analyzed solutions from [study-lenses](1-remix/parsons-problems/add-arrays).
 
 # [map-method-1](/1-remix/parsons-problems/add-arrays/map-method-1.js)
 
