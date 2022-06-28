@@ -22,7 +22,7 @@
 
 ## Test Cases
 
-My test cases:
+My tests from sandbox:
 
 ```js
 describe(`${solution.name}:should combine two given arrays of equal length in a new one,  
@@ -92,11 +92,19 @@ describe("testing addArrays()",function(){
 
 ## Use Cases
 
+We expect array input to either contain numbers or strings only.
+However arrays can contain any and all types of data, there are many user cases to test.
+Here are three main user cases:
+
+Array input are numbers only and have equal length.
+
 ```js
 const array1 = [1,2];
 const array2 = [4,5];
 console.log(addArray(array1,array2)); // [5,7]
 ```
+
+Array input are strings only and have equal length.
 
 ```js
 const array1 = ["h","f"];
@@ -104,6 +112,7 @@ const array2 = ["i","ive"];
 console.log(addArray(array1,array2)); // ["hi","five"]
 ```
 
+Array input are numbers only and have **unequal** length.
 
 ```js
 const array1 = [1,2];
