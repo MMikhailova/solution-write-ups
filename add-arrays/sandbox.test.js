@@ -7,17 +7,17 @@
 @return {Array} new array of combined "summed" arguments
 */
 
-const map1 = (array1, array2) => {
+const addArray1 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
   return array1.map((_, i) => array1[i] + array2[i]);
 };
 
-const map2 = (array1, array2) => {
+const addArray2 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
   return array1.map((v, i) => v + array2[i]);
 };
 
-const reduce = (arr1, arr2) => {
+const addArray3 = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     throw new Error();
   }
@@ -27,7 +27,7 @@ const reduce = (arr1, arr2) => {
   }, []);
 };
 
-for (const solution of [reduce, map1, map2]) {
+for (const solution of [addArray1, addArray2, addArray3]) {
   describe(`${solution.name}:should combine two given arrays of equal length in a new one, throw an error if its lengths are not equal`, () => {
     describe('arrays of the same length with either numbers or strings', () => {
       it('Passed arrays of numbers should return new summed array', () => {
@@ -43,8 +43,9 @@ for (const solution of [reduce, map1, map2]) {
       it('returns a new array', () => {
         const argument1 = [1, 2, 3, 4];
         const argument2 = [1, 1, 1, 1];
-        expect(solution(argument1, argument2) === argument1).toEqual(false);
-        expect(solution(argument1, argument2) === argument2).toEqual(false);
+        const newArray = solution(argument1, argument2);
+        expect(newArray === argument1).toEqual(false);
+        expect(newArray === argument2).toEqual(false);
       });
       it('does not modify the original array', () => {
         const argument1 = [1, 2, 3, 4];
