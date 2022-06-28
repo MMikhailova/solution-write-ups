@@ -6,7 +6,18 @@
 @param {Array} [arr2] - array of strings or numbers
 @return {Array} new array of combined "summed" arguments
 */
-const addArray = (arr1, arr2) => {
+
+const map1 = (array1, array2) => {
+  if (array1.length !== array2.length) throw new Error();
+  return array1.map((_, i) => array1[i] + array2[i]);
+};
+
+const map2 = (array1, array2) => {
+  if (array1.length !== array2.length) throw new Error();
+  return array1.map((v, i) => v + array2[i]);
+};
+
+const reduce = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     throw new Error();
   }
@@ -15,7 +26,7 @@ const addArray = (arr1, arr2) => {
     return newArray;
   }, []);
 };
-for (const solution of [addArray]) {
+for (const solution of [reduce, map1, map2]) {
   describe(`${solution.name}:should combine two given arrays of equal length in a new one, throw an error if its lengths are not equal`, () => {
     describe('arrays of the same length with either numbers or strings', () => {
       it('Passed arrays of numbers should return new summed array', () => {
