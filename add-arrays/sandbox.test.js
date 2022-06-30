@@ -9,20 +9,36 @@
 
 const addArray1 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
+  for (const i of array1) {
+    for (const j of array2) {
+      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
+      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+    }
+  }
   return array1.map((_, i) => array1[i] + array2[i]);
 };
 
 const addArray2 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
+  for (const i of array1) {
+    for (const j of array2) {
+      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
+      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+    }
+  }
   return array1.map((v, i) => v + array2[i]);
 };
 
-const addArray3 = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    throw new Error();
+const addArray3 = (array1, array2) => {
+  if (array1.length !== array2.length) throw new Error();
+  for (const i of array1) {
+    for (const j of array2) {
+      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
+      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+    }
   }
-  return arr1.reduce((newArray, num, i) => {
-    newArray.push(num + arr2[i]);
+  return array1.reduce((newArray, num, i) => {
+    newArray.push(num + array2[i]);
     return newArray;
   }, []);
 };
@@ -34,9 +50,7 @@ for (const solution of [addArray1, addArray2, addArray3]) {
         expect(solution([1, 2, 3, 4], [2, 1, 3, 5])).toEqual([3, 3, 6, 9]);
       });
       it('Passed arrays of strings should return new array with concatenated strings', () => {
-        expect(solution(['h', 'h', 'a', 'y'], ['i', 'ow', 're', 'ou'])).toEqual(
-          ['hi', 'how', 'are', 'you'],
-        );
+        expect(solution(['h', 'h', 'a', 'y'], ['i', 'ow', 're', 'ou'])).toEqual(['hi', 'how', 'are', 'you']);
       });
     });
     describe('has no side-effects', () => {
@@ -61,6 +75,9 @@ for (const solution of [addArray1, addArray2, addArray3]) {
       });
       it('input arrays consist of strings and have different length', () => {
         expect(() => solution(['hi', 'why', 'buy'], ['cry'])).toThrowError();
+      });
+      it('weird array', () => {
+        expect(() => solution([2, 'weird'], [() => 2, 4])).toThrowError();
       });
     });
   });
