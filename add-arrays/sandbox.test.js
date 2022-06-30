@@ -11,8 +11,8 @@ const addArray1 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
   for (const i of array1) {
     for (const j of array2) {
-      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
-      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+      if (typeof i !== 'string' && isNaN(i)) throw new Error();
+      if (typeof j !== 'string' && isNaN(j)) throw new Error();
     }
   }
   return array1.map((_, i) => array1[i] + array2[i]);
@@ -22,8 +22,8 @@ const addArray2 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
   for (const i of array1) {
     for (const j of array2) {
-      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
-      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+      if (typeof i !== 'string' && isNaN(i)) throw new Error();
+      if (typeof j !== 'string' && isNaN(j)) throw new Error();
     }
   }
   return array1.map((v, i) => v + array2[i]);
@@ -33,8 +33,8 @@ const addArray3 = (array1, array2) => {
   if (array1.length !== array2.length) throw new Error();
   for (const i of array1) {
     for (const j of array2) {
-      if (typeof i !== 'string' && typeof i !== 'number') throw new Error();
-      if (typeof j !== 'string' && typeof j !== 'number') throw new Error();
+      if (typeof i !== 'string' && isNaN(i)) throw new Error();
+      if (typeof j !== 'string' && isNaN(j)) throw new Error();
     }
   }
   return array1.reduce((newArray, num, i) => {
