@@ -2,10 +2,10 @@
 
 /**
  * Repeat a text given number of times.
-@param {string} [text='']
-@param {number} [repetitions = 1]
-@return {string} Repeated text.
-*/
+ * @param {string} [text='']
+ * @param {number} [repetitions = 1]
+ * @returns {string} Repeated text.
+ */
 
 const repeatString = (text = '', repetitions = 1) => {
   const finalLength = text * repetitions;
